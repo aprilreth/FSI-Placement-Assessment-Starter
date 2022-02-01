@@ -56,3 +56,24 @@ ccMinusBtn.addEventListener('click', function() {
     }
 })
 
+//Sugar Quantity
+const sugarPlusBtn = document.querySelector('#add-sugar')
+function changeQuantitySugar(displayQuantity) {
+    let sugarQty = document.getElementById('qty-sugar')
+    sugarQty.textContent = displayQuantity
+}
+sugarPlusBtn.addEventListener('click', function() {
+    sugar = sugar + 1
+    changeQuantitySugar(sugar)
+    qtyTotal.textContent = gb + cc + sugar
+})
+
+const sugarMinusBtn = document.querySelector('#minus-sugar')
+sugarMinusBtn.addEventListener('click', function() {
+    if(sugar > 0) {
+        sugar = sugar - 1
+        changeQuantitySugar(sugar)
+        qtyTotal.textContent = gb + cc + sugar
+    }
+})
+
