@@ -9,10 +9,15 @@ const credit = document.querySelector('#credit')
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
 
+var qtyTotal = document.getElementById('qty-total')
+qtyTotal.setAttribute('id', 'qty-total')
+qtyTotal.textContent = 0 // this will not change since its in the beginning so you need to add the total inside each cookie code
+
 // Gingerbread Quantity
 const gbPlusBtn = document.querySelector('#add-gb')
 function changeQuantityGb(displayQuantity) {
     let gbQty = document.getElementById('qty-gb')
+    gbQty.textContent = displayQuantity
 }
 
 gbPlusBtn.addEventListener('click', function() {
@@ -22,7 +27,7 @@ gbPlusBtn.addEventListener('click', function() {
 })
 
 const gbMinusBtn = document.querySelector('#minus-gb')
-gbMinusBtn.addEventListener('click', function(){
+gbMinusBtn.addEventListener('click', function() {
     if(gb > 0) {
         gb = gb - 1
         changeQuantityGb(gb)
