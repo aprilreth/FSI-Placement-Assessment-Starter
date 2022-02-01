@@ -35,3 +35,24 @@ gbMinusBtn.addEventListener('click', function() {
     }
 })
 
+//CC Quantity
+const ccPlusBtn = document.querySelector('#add-cc')
+function changeQuantityCc(displayQuantity) {
+    let ccQty = document.getElementById('qty-cc')
+    ccQty.textContent = displayQuantity
+}
+ccPlusBtn.addEventListener('click', function() {
+    cc = cc + 1
+    changeQuantityCc(cc)
+    qtyTotal.textContent = gb + cc + sugar
+})
+
+const ccMinusBtn = document.querySelector('#minus-cc')
+ccMinusBtn.addEventListener('click', function() {
+    if(cc > 0) {
+        cc = cc - 1
+        changeQuantityCc(cc)
+        qtyTotal.textContent = gb + cc + sugar
+    }
+})
+
